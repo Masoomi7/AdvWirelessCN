@@ -1,0 +1,21 @@
+#Masoomi
+import numpy as np
+import matplotlib.pyplot as plt
+L = 1000
+R = 1e6
+N = np.arange(1, 11)
+delay = N * (L / R)
+for n, d in zip(N, delay):
+    print(f"N = {n}, Delay = {d:.6f} seconds")
+
+plt.figure(figsize=(8, 5))
+
+plt.plot(N, delay * 1000,
+         marker='o',
+         linewidth=2)
+plt.xlabel("Number of Links (N)")
+plt.ylabel("Total Delay (ms)")
+plt.title("Store-and-Forward Packet Switching Delay")
+plt.grid(True)
+plt.xticks(N)
+plt.show()
